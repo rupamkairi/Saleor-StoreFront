@@ -1,7 +1,13 @@
+'use client';
+
+import Products from 'src/components/Products';
+
 export default function Page() {
   return (
     <div>
-      <p>Saleor 3d Store</p>
+      <div className="container mx-auto">
+        <Products />
+      </div>
     </div>
   );
 }
