@@ -1,13 +1,16 @@
 'use client';
 
 import Products from 'src/components/Products';
+import Providers from './providers';
 
 export default function Page() {
   return (
-    <div>
-      <div className="container mx-auto">
-        <Products />
+    <Providers>
+      <div>
+        <div className="container mx-auto">
+          <Products />
+        </div>
       </div>
-    </div>
+    </Providers>
   );
 }
