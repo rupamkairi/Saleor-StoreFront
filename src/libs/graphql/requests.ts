@@ -63,3 +63,44 @@ export function fetchProductById(id: string) {
     }
   });
 }
+
+const createCheckoutMutation = gql`
+  mutation CheckoutCreate($email: String!, $lines: [CheckoutLineInput!]!) {
+    checkoutCreate(
+      input: { channel: "default-channel", email: $email, lines: $lines }
+    ) {
+      checkout {
+        token
+      }
+      errors {
+        field
+        code
+      }
+    }
+  }
+`;
+
+// finalize order with shipping address billing address & shipping method
+
+export async function createCheckout(data: any) {
+  const lines = data.products.map((el: any) => el.variant);
+  // console.log({ data, email: data.customer.email, lines });
+
+  // return useQuery('create-checkout', async () => {
+  try {
+    const result = await apolloClient.mutate({
+      mutation: createCheckoutMutation,
+      variables: {
+        email: data.customer.email,
+        lines,
+
+      },
+    });
+
+    console.log({ result });
+  } catch (error) {
+    // console.log(error);
+    throw error;
+  }
+  // });
+}

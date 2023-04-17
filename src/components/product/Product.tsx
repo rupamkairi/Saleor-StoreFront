@@ -245,7 +245,7 @@ export default function Product() {
                     type="number"
                     id="quantity"
                     min="1"
-                    value="1"
+                    // value="1"
                     className="w-12 rounded border-gray-200 py-3 text-center text-xs [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                   />
                 </div>
