@@ -1,4 +1,7 @@
+'use client';
+
 import '../styles/globals.css';
+import Providers from './providers';
 
 export default function RootLayout({
   children,
@@ -10,7 +13,9 @@ export default function RootLayout({
       <head>
         <title>Saleor 3d Store</title>
       </head>
-      <body>{children}</body>
+      <Providers>
+        <body>{children}</body>
+      </Providers>
     </html>
   );
 }
