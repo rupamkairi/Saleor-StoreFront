@@ -8,8 +8,8 @@ export default function ProductsPage() {
 
   return (
     <div className="container mx-auto">
-      <ProductCollection />
-      <pre>{JSON.stringify({ isLoading, data }, null, 2)}</pre>
+      <ProductCollection data={data?.products.edges} />
+      {/* <pre>{JSON.stringify({ isLoading, data }, null, 2)}</pre> */}
     </div>
   );
 }

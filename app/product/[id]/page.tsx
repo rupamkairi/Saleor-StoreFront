@@ -34,16 +34,8 @@ export default function ProductPage({ params }: any) {
 
   return (
     <div>
-      <button
-        className="rounded bg-gray-300 px-6 py-3 text-sm font-semibold"
-        onClick={() => {
-          placeOrder();
-        }}
-      >
-        Create Checkout with {data?.product?.name}({data?.product?.id})
-      </button>
-      <Product />
-      <pre>{JSON.stringify({ isLoading, data, error }, null, 2)}</pre>
+      <Product data={data?.product} />
+      {/* <pre>{JSON.stringify({ isLoading, data, error }, null, 2)}</pre> */}
       {/* <ProductMainPreview />   */}
     </div>
   );

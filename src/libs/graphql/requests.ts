@@ -3,12 +3,24 @@ import { useQuery } from 'react-query';
 import { gql } from '@apollo/client';
 
 const fetchProductsQuery = gql`
-  query ProductGetThreeElements {
-    products(first: 3, channel: "default-channel") {
+  query ProductGetFiveElements {
+    products(first: 5, channel: "default-channel") {
       edges {
         node {
           id
           name
+          variants {
+            id
+            name
+            pricing {
+              price {
+                gross {
+                  currency
+                  amount
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -38,8 +50,8 @@ const fetchProductByIdQuery = gql`
         name
         pricing {
           price {
-            currency
             gross {
+              currency
               amount
             }
           }
@@ -93,7 +105,6 @@ export async function createCheckout(data: any) {
       variables: {
         email: data.customer.email,
         lines,
-
       },
     });
 

@@ -35,7 +35,8 @@
     "styled-components": "6.0.0-beta.2",
     "styled-jsx": "5.1.0",
     "three": "0.151.3",
-    "use-count-up": "3.0.1"
+    "use-count-up": "3.0.1",
+    "zustand": "4.3.7"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "3.3.0",
